@@ -1,11 +1,13 @@
 import java.util.LinkedList;
 
 /**
- * Created by kunqi on 6/28/18.
+ * Created by kunqi
+ * ON 7/6/18 6:39 PM
  */
-public class GetMaxWindon {
-    public static int[] getMaxWindom(int[] arr, int w){
-        if (arr.length < w || w < 1 || arr == null){
+// return max of sliding window
+public class MaxWindow {
+    private static int[] maxWindow(int[] arr, int w){
+        if (arr == null || arr.length < w || w < 1 ){
             return null;
         } else {
             LinkedList<Integer> maxq = new LinkedList<>();
@@ -30,9 +32,11 @@ public class GetMaxWindon {
 
     public static void main(String[] args){
         int[] intArr = {4,3,5,4,3,3,6,7};
-        int[] res = GetMaxWindon.getMaxWindom(intArr, 3);
-        for (int i = 0; i<res.length; i++){
-            System.out.println(res[i]);
+        int[] res = MaxWindow.maxWindow(intArr, 3);
+        for (int i : res){
+            System.out.println(i);
         }
     }
 }
+
+
