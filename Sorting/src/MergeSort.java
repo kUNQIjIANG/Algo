@@ -2,6 +2,7 @@
  * Created by kunqi on 6/30/18.
  */
 
+// Bottom-up
 public class MergeSort {
     private static void merge(int[] arr, int left, int mid, int right){
 
