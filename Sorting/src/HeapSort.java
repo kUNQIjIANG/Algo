@@ -32,5 +32,4 @@ public class HeapSort {
             System.out.println(i);
         }
     }
-
 }
