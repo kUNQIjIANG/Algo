@@ -8,7 +8,6 @@ public class MinStack {
     private Stack<Integer> stackData;
     private Stack<Integer> stackMin;
 
-
     public MinStack() {
         this.stackData = new Stack<Integer>();
         this.stackMin = new Stack<Integer>();
