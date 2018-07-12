@@ -19,8 +19,9 @@ public class Dijkstra {
     }
 
     private static void printResult(int[] dist, int src){
-        for (int i: dist){
-            System.out.println("shortest distance from source " + src + " : " + i);
+        for (int i = 0; i<dist.length; i++){
+            System.out.println("shortest distance from source " + src +
+                    " to " + i + " is " + dist[i]);
         }
     }
 

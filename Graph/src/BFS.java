@@ -3,20 +3,21 @@
  * ON 7/9/18 10:54 PM
  */
 
-
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.Queue;
 
 public class BFS {
-    static void bfs(int n, Graph G){
+    static void bfs(int src, Graph G){
 
         Queue<Integer> q = new LinkedList<>();
         boolean visited[] = new boolean[G.num];
-        q.add(n);
-        visited[n] = true;
+        q.add(src);
+        visited[src] = true;
+        int[] dist = new int[G.num];
+
         while (!q.isEmpty()){
-            n = q.remove();
+            int n = q.remove();
             System.out.print(n+"->");
             Iterator<Integer> c = G.adj[n].listIterator();
             while(c.hasNext()){
@@ -24,8 +25,14 @@ public class BFS {
                 if(!visited[s]){
                     visited[s] = true;
                     q.add(s);
+                    dist[s] = dist[n] + 1;
                 }
             }
+        }
+        System.out.println();
+        for (int i = 0; i < dist.length; i++) {
+            System.out.println("shortest dist from src "
+                    + src + " to " + i + " is " + dist[i]);
         }
     }
 
