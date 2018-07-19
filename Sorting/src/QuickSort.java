@@ -7,19 +7,19 @@
 public class QuickSort {
     private static int partition(int[] arr, int low, int high){
         int pivot = arr[high];
-        int i = low - 1; // index for smaller than pivot
+        int i = low; // index for smaller than pivot
         for (int j = low; j < high; j++){
             if (arr[j] < pivot) {
-                i ++;
                 int temp = arr[i];
                 arr[i] = arr[j];
                 arr[j] = temp;
+                i++;
             }
         }
-        int temp = arr[i+1];
-        arr[i+1] = pivot;
+        int temp = arr[i];
+        arr[i] = pivot;
         arr[high] = temp;
-        return i+1;
+        return i;
     }
 
     private static void quickSort(int[] arr, int low, int high){

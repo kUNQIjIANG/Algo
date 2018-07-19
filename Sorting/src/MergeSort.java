@@ -34,18 +34,18 @@ public class MergeSort {
         }
     }
 
-    private static void sort(int[] arr, int left, int right){
+    private static void mergeSort(int[] arr, int left, int right){
         int mid = (left + right) / 2;
-        if (right - left > 1){
-            sort(arr, left, mid);
-            sort(arr,mid + 1, right);
+        if (right > left){
+            mergeSort(arr, left, mid);
+            mergeSort(arr,mid + 1, right);
         }
         merge(arr, left, mid, right);
     }
 
     public static void main(String[] args){
         int[] arr = {2,3,5,1,6,2,2,4};
-        MergeSort.sort(arr,0,arr.length-1);
+        MergeSort.mergeSort(arr,0,arr.length-1);
         for (int i : arr){
             System.out.println(i);
         }
