@@ -71,4 +71,35 @@ public class SameNode {
         return fast;
     }
 
+    // find first public node in two possible ring linkedList
+    private Node ringPublicNode(Node head1, Node head2){
+        Node entran1 = ringEntrance(head1);
+        Node entran2 = ringEntrance(head2);
+        if (entran1 == null && entran2 == null){
+            return publicNode(head1, head2);
+        }else if(entran1 == null || entran2 == null){
+            return null; // no public node
+        }else{
+            if (entran1 == entran2) {
+                // first common node is in the branch
+                Node temp1 = entran1.next;
+                Node temp2 = entran2.next;
+                entran1.next = null;
+                entran2.next = null;
+                Node firstPublicNode = publicNode(head1,head2);
+                entran1.next = temp1;
+                entran2.next = temp2;
+                return firstPublicNode;
+            }else{
+                // maybe different ring, check if a ring
+                // contain other entrance node
+                Node pivot = entran1.next;
+                while(pivot != entran1 && pivot != entran2){
+                    pivot = pivot.next;
+                }
+                return pivot == entran2 ? pivot : null;
+            }
+        }
+    }
+
 }
