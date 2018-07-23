@@ -2,6 +2,7 @@
  * Created by kunqi
  * ON 7/19/18 6:18 PM
  */
+
 import java.util.Queue;
 import java.util.LinkedList;
 
@@ -29,7 +30,6 @@ public class TreeDepth {
                 }
             }
             return depth;
-
         }
     }
 }
