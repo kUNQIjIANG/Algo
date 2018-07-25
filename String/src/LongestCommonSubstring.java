@@ -37,6 +37,7 @@ public class LongestCommonSubstring {
         }
     }
 
+    // DP O(n^2)
     private static int DPLCS(String s1, String s2){
         int len1 = s1.length();
         int len2 = s2.length();
