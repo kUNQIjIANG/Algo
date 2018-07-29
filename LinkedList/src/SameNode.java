@@ -16,7 +16,7 @@ public class SameNode {
         return len;
     }
 
-    // no ring, return first public node, else null;
+    // assume no ring, return first public node, else null;
     private Node publicNode(Node head1, Node head2){
         int len1 = lenght(head1);
         int len2 = lenght(head2);
@@ -47,7 +47,9 @@ public class SameNode {
             fast = fast.next.next;
             if (slow == fast) break;
         }
-        return fast != null && fast.next != null; // (why fast.next != null required)
+        return fast != null && fast.next != null;
+        // in case head is last node, can not use
+        // slow == fast
     }
 
     private Node ringEntrance(Node head){
