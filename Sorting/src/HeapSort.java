@@ -22,7 +22,7 @@ public class HeapSort {
         }
         arr[index] = arr[0];
     }
-
+    // 最大堆
     private static void buildHeap(int[] arr){
         for (int i = (arr.length-1)/2; i > 0; i--){
             topDown(arr,i,arr.length-1);
@@ -39,8 +39,9 @@ public class HeapSort {
     }
 
     private static void adjustUp(int[] arr, int k){
+        // k is position
         arr[0] = arr[k];
-        int i = k/2;
+        int i = k/2; //parent node
         while(i>0 && arr[i] < arr[0]){
             arr[k] = arr[i];
             k = i;
@@ -51,8 +52,8 @@ public class HeapSort {
 
     public static void main(String[] args){
         int[] arr = {0,9,53,65,17,32,78,45,87};
-        //heapSort(arr);
-        adjustUp(arr,8);
+        heapSort(arr);
+        //adjustUp(arr,8);
         for (int i = 1; i<arr.length; i++){
             System.out.println(arr[i]);
         }

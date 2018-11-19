@@ -6,10 +6,12 @@ public class BubbleSort {
         int n = arr.length;
         boolean flag;
         int temp;
+        int count = 0;
         for (int i = 0; i < n; i++){
             flag = true;
             // upper bound: one smallest placed each run
             for (int j = n-1; j>i; j--){
+                count ++;
                 if (arr[j] < arr[j-1]){
                     temp = arr[j-1];
                     arr[j-1] = arr[j];
@@ -19,15 +21,18 @@ public class BubbleSort {
             }
             if (flag) break;
         }
+        System.out.println("count"+count);
     }
 
     private static void bubbleSort2(int[] arr){
         int n = arr.length;
         boolean flag = false;
         int temp;
+        int count = 0;
         while (!flag){
             flag = true;
             for (int i = n-1; i > 0; i--){
+                count ++;
                 if (arr[i] < arr[i-1]){
                     temp = arr[i];
                     arr[i] = arr[i-1];
@@ -36,11 +41,12 @@ public class BubbleSort {
                 }
             }
         }
+        System.out.println("count"+count);
     }
 
     public static void main(String[] args){
         int[] arr = {10,9,9,8,7,6,5,4,3};
-        BubbleSort.bubbleSort2(arr);
+        BubbleSort.bubbleSort(arr);
         for (int i : arr){
             System.out.println(i);
         }

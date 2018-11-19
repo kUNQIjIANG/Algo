@@ -7,7 +7,7 @@
 public class QuickSort {
     private static int partition(int[] arr, int low, int high){
         int pivot = arr[high];
-        int i = low; // index for smaller than pivot
+        int i = low; // index of value smaller than pivot
         for (int j = low; j < high; j++){
             if (arr[j] < pivot) {
                 int temp = arr[i];
