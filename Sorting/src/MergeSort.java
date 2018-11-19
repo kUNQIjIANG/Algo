@@ -2,10 +2,11 @@
  * Created by kunqi on 6/30/18.
  */
 
-// Bottom-up
-public class MergeSort {
-    private static void merge(int[] arr, int left, int mid, int right){
+// Bottom-up : sub-array left and right already sorted
 
+public class MergeSort {
+    private static void merge(int[] arr, int left, int right){
+        int mid = (left+right) / 2;
         int[] leftArr = new int[mid-left+1];
         int[] rightArr = new int[right-mid];
 
@@ -40,7 +41,7 @@ public class MergeSort {
             int mid = (left + right) / 2;
             mergeSort(arr, left, mid);
             mergeSort(arr, mid + 1, right);
-            merge(arr, left, mid, right);
+            merge(arr, left, right);
         }
     }
 
