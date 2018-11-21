@@ -4,6 +4,7 @@
  */
 
 import java.lang.Math;
+// refer to : https://www.cnblogs.com/fankongkong/p/7007869.html
 
 public class SameNode {
 
@@ -62,13 +63,13 @@ public class SameNode {
             if (slow == fast) break;
         }
 
-        // a : from head to ring entrance
-        // x : from ring entrance to first meet
-        // r : ring length
-        // a = (r-x) + n*r
+        // fast stays in the meeting node
         slow = head;
+        // head to ring entrance = meeting node to ring entrance
         while(fast != null && fast != slow){
             fast = fast.next;
+            slow = slow.next;
+
         }
         return fast;
     }
@@ -84,6 +85,11 @@ public class SameNode {
         }else{
             if (entran1 == entran2) {
                 // first common node is in the branch
+                //           head2
+                //             |
+                //  head1 _____|_______
+                //                 |___|
+                //
                 Node temp1 = entran1.next;
                 Node temp2 = entran2.next;
                 entran1.next = null;
@@ -95,6 +101,12 @@ public class SameNode {
             }else{
                 // maybe different ring, check if a ring
                 // contain other entrance node
+                //
+                //           entran1
+                //    head1_________
+                //              |___|_______head2
+                //                entran2
+                //
                 Node pivot = entran1.next;
                 while(pivot != entran1 && pivot != entran2){
                     pivot = pivot.next;
