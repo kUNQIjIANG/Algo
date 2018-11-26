@@ -3,10 +3,6 @@
  * ON 11/24/18 10:36 PM
  */
 
-/**
- * Created by kunqi
- * ON 11/24/18 7:02 PM
- */
 
 import java.io.*;
 import java.util.Scanner;
