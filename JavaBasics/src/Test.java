@@ -24,7 +24,7 @@ public class Test implements Runnable{
         while(t.isAlive()) {
 
             System.out.println("wait");
-            t.join(6000);
+            t.join(2000);
             if (System.currentTimeMillis() - startTime > patient) {
                 System.out.println("interrupt");
                 t.interrupt();
