@@ -1,3 +1,5 @@
+package Multithreads.RunnableDemo;
+
 /**
  * Created by kunqi
  * ON 11/24/18 10:30 PM
@@ -25,7 +27,7 @@ public class RunnableDemo implements Runnable {
         System.out.println("Thread " + threadName + "exits");
     }
 
-    public void start(){
+    void start(){
         System.out.println("Starting thread " + threadName);
         if (t == null){
             t = new Thread(this, threadName);

@@ -1,3 +1,7 @@
+package Multithreads.ProductConsumer;
+
+import Multithreads.ProductConsumer.Drop;
+
 import java.util.Random;
 
 /**
@@ -5,19 +9,20 @@ import java.util.Random;
  * ON 11/28/18 7:49 PM
  */
 
-public class Producer implements Runnable {
+class Producer implements Runnable {
+
     private Drop drop;
     private String[] infos;
 
-    public Producer (Drop drop, String[] infos){
+    Producer (Drop drop, String[] infos){
         this.drop = drop;
         this.infos = infos;
     }
 
     public void run(){
         Random random = new Random();
-        for (int i = 0; i < infos.length; i++) {
-            drop.put(infos[i]);
+        for (String s : infos) {
+            drop.put(s);
             try {
                 // simulate real-time application
                 Thread.sleep(random.nextInt(5000));

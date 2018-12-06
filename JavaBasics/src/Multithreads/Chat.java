@@ -1,3 +1,5 @@
+package Multithreads;
+
 /**
  * Created by kunqi
  * ON 11/26/18 6:05 PM
@@ -5,9 +7,9 @@
 
 public class Chat {
 
-    Boolean flag = false;
+    private Boolean flag = false;
 
-    public synchronized void question(String msg){
+    synchronized void question(String msg){
         if (flag){
             try{
                 wait();
@@ -20,7 +22,7 @@ public class Chat {
         notify();
     }
 
-    public synchronized void answer(String msg){
+    synchronized void answer(String msg){
         if (!flag){
             try{
                 wait();
@@ -44,8 +46,8 @@ public class Chat {
 }
 
 class T1 implements Runnable {
-    Chat c;
-    String[] msgs;
+    private Chat c;
+    private String[] msgs;
 
     T1(Chat c, String[] msgs){
         this.c = c;
@@ -54,15 +56,15 @@ class T1 implements Runnable {
     }
 
     public void run(){
-        for ( int i = 0; i < msgs.length; i++){
-            c.question(msgs[i]);
+        for ( String msg : msgs){
+            c.question(msg);
         }
     }
 }
 
 class T2 implements Runnable{
-    Chat c;
-    String[] msgs;
+    private Chat c;
+    private String[] msgs;
 
     T2(Chat c, String[] msgs){
         this.c = c;
@@ -71,8 +73,8 @@ class T2 implements Runnable{
     }
 
     public void run(){
-        for (int i = 0; i < msgs.length; i++){
-            c.answer(msgs[i]);
+        for (String msg : msgs){
+            c.answer(msg);
         }
     }
 }

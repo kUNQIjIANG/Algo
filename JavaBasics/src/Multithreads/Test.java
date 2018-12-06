@@ -1,3 +1,5 @@
+package Multithreads;
+
 /**
  * Created by kunqi
  * ON 11/26/18 9:54 PM

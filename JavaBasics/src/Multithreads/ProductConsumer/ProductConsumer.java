@@ -1,3 +1,8 @@
+package Multithreads.ProductConsumer;
+
+import Multithreads.ProductConsumer.Drop;
+import Multithreads.ProductConsumer.Producer;
+
 /**
  * Created by kunqi
  * ON 11/28/18 9:58 PM

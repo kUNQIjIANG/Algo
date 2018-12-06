@@ -1,13 +1,16 @@
+package Multithreads.ProductConsumer;
+
 /**
  * Created by kunqi
  * ON 11/28/18 7:40 PM
  */
 
-public class Drop {
+class Drop {
+
     private String message;
     private boolean empty = true;
 
-    public synchronized String take(){
+    synchronized String take(){
         while(empty){
             try{
                 wait();
@@ -21,7 +24,7 @@ public class Drop {
         return message;
     }
 
-    public synchronized void put(String message){
+    synchronized void put(String message){
         while(!empty){
             try{
                 wait();

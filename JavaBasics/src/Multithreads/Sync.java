@@ -1,23 +1,24 @@
+package Multithreads;
+
 /**
  * Created by kunqi
  * ON 11/27/18 11:37 AM
  */
 
 
-
-
 public class Sync {
+
     private int c = 0;
 
-    public synchronized void add() {
+    synchronized void add() {
         c++;
     }
 
-    public synchronized void subs() {
+    synchronized void subs() {
         c--;
     }
 
-    public synchronized int getC() {
+    synchronized int getC() {
         return c;
     }
 
@@ -33,8 +34,8 @@ public class Sync {
 }
 
 class T3 implements Runnable{
-    Sync s;
-    String name;
+    private Sync s;
+    private String name;
 
     T3(Sync s, String name){
         this.s = s;
@@ -49,8 +50,8 @@ class T3 implements Runnable{
 }
 
 class T4 implements Runnable{
-    Sync s;
-    String name;
+    private Sync s;
+    private String name;
 
     T4(Sync s,String name){
         this.s = s;
@@ -64,8 +65,8 @@ class T4 implements Runnable{
 }
 
 class T5 implements Runnable{
-    Sync s;
-    String name;
+    private Sync s;
+    private String name;
 
     T5(Sync s, String name){
         this.s = s;

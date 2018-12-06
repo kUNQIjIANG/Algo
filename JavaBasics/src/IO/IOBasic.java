@@ -1,8 +1,9 @@
+package IO;
+
 /**
  * Created by kunqi
  * ON 11/24/18 10:36 PM
  */
-
 
 import java.io.*;
 import java.util.Scanner;
@@ -28,11 +29,10 @@ public class IOBasic {
     }
 
     public static void fileStream(String file) throws IOException{
-        try (FileOutputStream output = new FileOutputStream(file);){
+        try (FileOutputStream output = new FileOutputStream(file)){
             for (int i = 1; i <= 5; i++){
                 output.write(i);
             }
-            output.close();
         }
 
 
@@ -46,7 +46,7 @@ public class IOBasic {
 
     public static void dataStream(String file) throws IOException{
         try( DataOutputStream output = new DataOutputStream(
-                new FileOutputStream(file));){
+                new FileOutputStream(file))){
             output.writeUTF("John");
             output.writeDouble(85.5);
             output.writeUTF("Jim");
@@ -55,7 +55,7 @@ public class IOBasic {
         }
 
         try (DataInputStream input = new DataInputStream(
-                new FileInputStream(file));){
+                new FileInputStream(file))){
             System.out.println(input.readUTF() + " " + input.readDouble());
             System.out.println(input.readUTF() + " " + input.readDouble());
         }
@@ -80,7 +80,7 @@ public class IOBasic {
                 BufferedInputStream input = new BufferedInputStream(
                         new FileInputStream(sourceFile));
                 BufferedOutputStream output = new BufferedOutputStream(
-                        new FileOutputStream(targetFile));)
+                        new FileOutputStream(targetFile)))
         {
             int r, numberOfByteCopied = 0;
             while (( r = input.read()) != -1){
