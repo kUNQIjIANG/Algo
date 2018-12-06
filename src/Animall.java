@@ -1,6 +1,9 @@
 /**
  * Created by kunqi on 6/27/18.
  */
+
+import javax.servlet.Servlet;
+
 public class Animall {
     public static void testClassMethod() {
         System.out.println("The static method in Animal");
