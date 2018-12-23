@@ -42,6 +42,8 @@ public class DivideList {
                     tail2 = tail2.next;
                 }
             }
+
+            head = next;
         }
 
         if (head1 != null){
