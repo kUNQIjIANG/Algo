@@ -5,8 +5,9 @@
 
 class Node {
     int val;
-    protected Node next;
-    protected Node(int val){
+    Node next;
+    Node prev;
+    Node(int val){
         this.val = val;
     }
 }
