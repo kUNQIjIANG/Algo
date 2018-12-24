@@ -1,3 +1,5 @@
+import java.util.Stack;
+
 /**
  * Created by kunqi
  * ON 12/23/18 4:51 PM
@@ -52,5 +54,29 @@ public class KInverse {
             left.next = end;
         }
         start.next = right;
+    }
+
+    // 直接赋值就好
+    private Node stackKInverse(Node head, int k){
+        if ( head != null && head.next != null && k > 1){
+            Node act = head;
+            Node wait = head;
+            int count = 1;
+            Stack<Integer> stack = new Stack<>();
+            while( act != null ){
+                stack.push(act.val);
+                if( count == k ){
+                    while ( !stack.isEmpty() ){
+                        wait.val = stack.pop();
+                        wait = wait.next;
+                    }
+                    count = 0;
+                }
+                count ++;
+                act = act.next;
+            }
+
+        }
+        return head;
     }
 }
