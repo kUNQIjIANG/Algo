@@ -4,7 +4,9 @@
  */
 
 public class Reverse {
-    static Node reverse(Node root){
+
+    private Node reverse(Node root){
+
         Node pre = null;
         Node cur = root;
         Node next = null;
@@ -16,5 +18,18 @@ public class Reverse {
         }
         cur.next = pre;
         return cur;
+    }
+
+    // recursion version
+    private Node recursionReverse(Node root){
+        if ( root == null) return root;
+        if ( root.next == null) return root;
+
+        Node newHead = recursionReverse(root.next);
+
+        root.next.next = root;
+        root.next = root;
+
+        return newHead;
     }
 }
