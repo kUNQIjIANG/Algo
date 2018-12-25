@@ -9,7 +9,7 @@ import java.util.Stack;
 
 public class KInverse {
 
-    private Node kInverse(Node head, int k){
+    private static Node kInverse(Node head, int k){
 
         if( head != null && head.next != null && k > 1){
 
@@ -38,7 +38,7 @@ public class KInverse {
 
     }
 
-    private void reverse(Node left, Node start, Node end, Node right){
+    private static void reverse(Node left, Node start, Node end, Node right){
         Node pre = start;
         Node cur = start.next;
         Node next = cur.next;
@@ -57,7 +57,7 @@ public class KInverse {
     }
 
     // 直接赋值就好
-    private Node stackKInverse(Node head, int k){
+    private static Node stackKInverse(Node head, int k){
         if ( head != null && head.next != null && k > 1){
             Node act = head;
             Node wait = head;
@@ -78,5 +78,17 @@ public class KInverse {
 
         }
         return head;
+    }
+
+    public static void main(String[] args) {
+        int[] array = {1,2,3,4,5,6,7,8};
+        Node head = Operation.creatLinkedList(array);
+        Operation.printLinkedList(head);
+        System.out.println("K Inverse");
+        Node reverHead = kInverse(head,3);
+        Operation.printLinkedList(reverHead);
+        Operation.printLinkedList(head);
+        Node stackReverHead = stackKInverse(head,3);
+        Operation.printLinkedList(stackReverHead);
     }
 }
