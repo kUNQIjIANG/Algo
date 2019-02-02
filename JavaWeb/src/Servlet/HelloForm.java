@@ -1,4 +1,4 @@
-/**
+package Servlet;/*
  * Created by kunqi
  * ON 1/6/19 5:09 PM
  */
@@ -37,5 +37,11 @@ public class HelloForm extends HttpServlet {
                 "</body>" +
                 "</html>"
         );
+    }
+    
+    public void doPost(HttpServletRequest request, HttpServletResponse response)
+	throws ServletException, IOException{
+	
+	doGet(request, response);
     }
 }
