@@ -41,7 +41,9 @@ public class MinDepthOfBinaryTree {
         Queue<TreeNode> queue = new LinkedList<TreeNode>();
         queue.add(root);
         int depth = 1;
+        // num of nodes in current level
         int count = 1;
+        // num of nodes in next level
         int nextCount = 0;
         int c = 0;
         TreeNode cur;
