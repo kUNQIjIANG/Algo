@@ -3,9 +3,12 @@
  * ON 8/10/18 11:31 PM
  */
 
+// 最长回文
+
 public class Palindrome {
 
     // brute-force : O(n^3)
+    // 从两端到中心
     static boolean isPalindrome(String s, int left, int right){
         while(left <= right){
             if (s.charAt(left) == s.charAt(right)){
@@ -31,6 +34,7 @@ public class Palindrome {
     }
 
     // 中心扩展法
+    // 从中心到两端
     static int longestCenter(String s, int mid){
         int left = mid - 1;
         int right = mid + 1;
