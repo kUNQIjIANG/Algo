@@ -21,5 +21,6 @@ public class Cat extends Animall {
         myAnimal.testInstanceMethod();
         myAnimal.testClassMethod();
         myCat.testClassMethod();
+        System.out.println(4/5);
     }
 }
