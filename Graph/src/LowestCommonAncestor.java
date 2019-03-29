@@ -3,7 +3,7 @@
  * ON Mar/29/2019 21:46
  */
 public class LowestCommonAncestor {
-    public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q){
+    private TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q){
         if (root == null) return null;
         else if (root == p || root == q) return root;
         else{
