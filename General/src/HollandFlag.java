@@ -10,26 +10,19 @@ public class HollandFlag {
         arr[y] = temp;
     }
 
-    private static int[] hollandSort(int[] arr){
-        int begin = 0;
-        int cur = 0;
-        int end = arr.length - 1;
-
-        while(cur < end){
-            if (arr[cur] == 0){
-                swap(arr,begin,cur);
-                begin++;
-                cur++;
-            }
-            else if(arr[cur] == 1){
-                cur++;
-            }
-            else if(arr[cur] == 2){
-                swap(arr,cur,end);
-                end --;
-            }
+    static int[] hollandSort(int[] nums) {
+        int left = 0;
+        int right = nums.length - 1;
+        int index = 0;
+        while(index <= right){
+            if (nums[index] < 1){
+                // 前面不会换过来大的
+                swap(nums,left++,index++);
+            }else if(nums[index] > 1){
+                swap(nums,index,right--);
+            }else index++;
         }
-        return arr;
+        return nums;
     }
 
     public static void main(String[] args) {
