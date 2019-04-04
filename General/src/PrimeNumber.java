@@ -2,6 +2,7 @@
  * Created by kunqi
  * ON Apr/04/2019 23:41
  */
+// refer: https://blog.csdn.net/BestZem/article/details/51992873
 public class PrimeNumber {
     static void primeNumber(int n){
         boolean[] mark = new boolean[n+1];
