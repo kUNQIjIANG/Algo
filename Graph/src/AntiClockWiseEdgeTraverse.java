@@ -20,7 +20,6 @@ public class AntiClockWiseEdgeTraverse {
         }
     }
 
-
     private static void addLeafNode(TreeNode root){
         if (root == null) return;
         else{
