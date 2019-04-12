@@ -3,6 +3,9 @@
  * ON 7/12/18 12:28 AM
  */
 
+//refer to : https://www.geeksforgeeks.org/dijkstras-shortest-path-algorithm-greedy-algo-7/
+// find shortest path from src to every other vertex
+
 public class Dijkstra {
 
     private static int findMinDist(int[] dist, boolean[] spt){
@@ -34,7 +37,6 @@ public class Dijkstra {
         }
 
         dist[src] = 0;
-
         for (int count = 0; count < V-1; count++){
             // pick min dist vertex from uncover set
             int u = findMinDist(dist,spt);
