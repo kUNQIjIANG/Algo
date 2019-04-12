@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 /**
  * Created by kunqi
  * ON 7/8/18 1:17 AM
@@ -32,10 +34,9 @@ public class QuickSort {
     }
 
     public static void main(String[] args){
-        int[] arr = {3,2,1,4,5,2,6,1,7,3};
+        //int[] arr = {3,2,1,4,5,2,6,1,7,3};
+        int[] arr = {9,8,7,6,5};
         QuickSort.quickSort(arr,0,arr.length-1);
-        for (int i : arr){
-            System.out.println(i);
-        }
+        System.out.println(Arrays.toString(arr));
     }
 }

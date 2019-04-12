@@ -13,9 +13,7 @@ public class PushPopSequence {
         int pushLen = pushSeq.length;
         int popLen = popSeq.length;
         if (pushLen != popLen) return false;
-
         int pushIndex = 0, popIndex = 0;
-
 
         while(popIndex < popLen){
             if (pushIndex < pushLen && (stack.isEmpty() || stack.peek() != popSeq[popIndex])){
